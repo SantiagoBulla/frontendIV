@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./src/components/eit-component.js"></script>
     <title>Tutorial Lit Element</title>
 </head>
 <body>
     <h1>Lit element basics</h1>
+    <eit-component counter="0" id="counter"></eit-component>
+    <button id="reset">reset</button>
 </body>
+<script>
+    document.getElementById('reset').addEventListener('click',function(){
+        document.getElementById('counter').counter = 0;
+    })
+</script>
 </html>
