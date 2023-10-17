@@ -1,0 +1,17 @@
+{
+  "name": "portafoliomatematico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "author": "Santiago Bulla",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^4.0.0"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.3.3"
+  }
+}
