@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "web-dev-server --node-resolve --open --watch"
+    "start": "web-dev-server"
   },
   "author": "Santiago Bulla",
   "license": "ISC",
@@ -12,6 +12,6 @@
     "@web/dev-server": "^0.3.3"
   },
   "dependencies": {
-    "lit": "^3.0.0"
+    "lit-element": "^4.0.0"
   }
 }
