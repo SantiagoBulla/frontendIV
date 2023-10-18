@@ -120,28 +120,32 @@ export class TablasMultiplicar extends LitElement {
 
     generarTabla() {
         const num = parseInt(this.shadowRoot.getElementById('numero').value);
-        const num1 = num * 1;
-        const num2 = num * 2;
-        const num3 = num * 3;
-        const num4 = num * 4;
-        const num5 = num * 5;
-        const num6 = num * 6;
-        const num7 = num * 7;
-        const num8 = num * 8;
-        const num9 = num * 9;
-        const num10 = num * 10;
-        this.tabla = `
-            1 * ${num} = ${num1}
-            2 * ${num} = ${num2}
-            3 * ${num} = ${num3}
-            4 * ${num} = ${num4}
-            5 * ${num} = ${num5}
-            6 * ${num} = ${num6}
-            7 * ${num} = ${num7}
-            8 * ${num} = ${num8}
-            9 * ${num} = ${num9}
-            10 * ${num} = ${num10}
-        `
+            if (!isNaN(num)) {  
+            const num1 = num * 1;
+            const num2 = num * 2;
+            const num3 = num * 3;
+            const num4 = num * 4;
+            const num5 = num * 5;
+            const num6 = num * 6;
+            const num7 = num * 7;
+            const num8 = num * 8;
+            const num9 = num * 9;
+            const num10 = num * 10;
+            this.tabla = `
+                1 * ${num} = ${num1}
+                2 * ${num} = ${num2}
+                3 * ${num} = ${num3}
+                4 * ${num} = ${num4}
+                5 * ${num} = ${num5}
+                6 * ${num} = ${num6}
+                7 * ${num} = ${num7}
+                8 * ${num} = ${num8}
+                9 * ${num} = ${num9}
+                10 * ${num} = ${num10}
+            `
+        } else {
+            alert("El numero para generar la tabla de multiplicar es obligatorio")
+        }
     }
 
     

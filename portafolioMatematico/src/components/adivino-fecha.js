@@ -121,7 +121,7 @@ export class AdivinoFecha extends LitElement {
 
     calcularDatos() {
         const agnoUser = parseInt(this.shadowRoot.getElementById('agno').value);
-        if (!isNaN(agnoUser)) { 
+        if (!isNaN(agnoUser) && agnoUser > 0) { 
             let date = new Date();
             let agno = date.getFullYear();
             const edad = agno - agnoUser
