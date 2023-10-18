@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./src/components/menu-component.js"></script>
     <script type="module" src="./src/components/sum-div.js"></script>
     <script type="module" src="./src/components/secuencia-fibonacci.js"></script>
     <script type="module" src="./src/components/pitagoras-formula.js"></script>
@@ -14,10 +15,15 @@
     <script type="module" src="./src/components/area-circulo.js"></script>
     <script type="module" src="./src/components/perimetro-rectangulo.js"></script>
     <title>Proyecto 1 Lit Element</title>
-
+    <style>
+        *{
+                margin: 0;
+                padding:0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Portafolio matematico</h1>
+    <menu-component></menu-component>
     <!-- <sum-div></sum-div>
     <secuencia-fibonacci></secuencia-fibonacci>
     <pitagoras-formula></pitagoras-formula>
