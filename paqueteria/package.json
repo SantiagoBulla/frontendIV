@@ -1,0 +1,17 @@
+{
+  "name": "paqueteria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^3.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.3.6"
+  }
+}
