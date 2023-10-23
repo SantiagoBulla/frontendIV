@@ -1,11 +1,23 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 import loginPageStyle from '../css/login-pageStyle.js';
+import * as fs from 'node:fs/promises';
 
 export class LoginPage extends LitElement {
 
-    static get styles(){
-        return[loginPageStyle]
+    static get styles() {
+        return [loginPageStyle]
     }
+
+    static properties = {
+        userData:{
+            type: String
+        }
+    }
+
+    constructor() {
+        super();
+        this.userData = null; // Inicializamos userData como nulo
+      }
 
     render() {
         return html`
@@ -24,11 +36,21 @@ export class LoginPage extends LitElement {
                     </div>
                 </div>
                 <div class="login-footer">
-                    <button>Ingresar al sistema</button>
+                    <button><a @click=${() => this.login()}>INGRESAR</a></button>
                 </div>
             </div>
         `;
     }
-    
+
+    async login() {
+        try {
+            const users = await fs.promises.readFile('paqueteria/src/bd/users.json', 'utf-8');
+            this.userData = JSON.parse(users); // Almacenamos los datos en userData
+            console.log(this.userData);
+            this.requestUpdate(); // Forzamos un nuevo renderizado
+          } catch (error) {
+            console.error(error);
+          }
+    }
 }
 customElements.define('login-page', LoginPage);
