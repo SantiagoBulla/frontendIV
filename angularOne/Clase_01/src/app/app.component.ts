@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Clase_01';
+
+  cambioText(){
+    this.title = "Adios Clase_01";
+  }
 }

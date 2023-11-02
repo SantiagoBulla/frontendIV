@@ -1,0 +1,18 @@
+<div class="container-register">
+    <h1>Register Form</h1>
+    <div class="inputs">
+        <label for="">Username</label>
+        <input type="text" placeholder="" [(ngModel)]="username"><br>
+        <label for="">Name</label>
+        <input type="text" placeholder="" [(ngModel)]="name"><br>
+        <label for="">Last name</label>
+        <input type="text" placeholder="" [(ngModel)]="lastName"><br>
+        <label for="">Phone</label>
+        <input type="number" placeholder="" [(ngModel)]="phone"><br>
+        <label for="">Address</label>
+        <input type="text" placeholder="" [(ngModel)]="address"><br>
+        <label for="">Password</label>
+        <input type="password" placeholder="" [(ngModel)]="password"><br>
+    </div>
+    <button (click)="register()">Create Account</button>
+</div>

@@ -1,0 +1,36 @@
+<!-- <div class="container">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Titulo de la card</h4>
+                </div>
+                <div class="card-body">
+                    <p>login works!</p>
+                    <input type="text" name="" id="" [(ngModel)]="nombre">
+                    <button class="btn btn-success" (click)="mostrarNombre()">Mostrar nombre</button>
+                </div>
+            </div>
+            <h1>{{saludo}}</h1>
+        </div>
+        <div class="col"></div>
+    </div>
+</div> -->
+
+<div class="container-login">
+    <h1>Login Form</h1>
+    <div class="inputs">
+        <label for="">username</label>
+        <input type="text" placeholder="Ingresa nombre de usuario" [(ngModel)]="username" required><br>
+        <label for="">password</label>
+        <input type="password" placeholder="Ingresa la contraseña" [(ngModel)]="password" required><br>
+        <input type="checkbox" name="" id=""><br>
+        <label for="">remeber log in data</label><br>
+        <button (click)="login()">LOGIN</button>
+    </div>
+    <div class="more-options">
+        <button>Register</button>
+        <a href="">Forgot password?</a>
+    </div>
+</div>
