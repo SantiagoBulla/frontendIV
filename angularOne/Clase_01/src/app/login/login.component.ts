@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   // nombre: String = '';
   // saludo: String = '';
   username: String = '';
@@ -20,8 +19,14 @@ export class LoginComponent implements OnInit {
   //   this.saludo = `Hola ${this.nombre}`;
   // }
 
-  login(){
-    alert(`EL username es ${this.username} y el password es ${this.password}`);
+  login() {
+    if (
+      !this.username ||
+      !this.password ||
+      this.password == ' ' ||
+      this.username == ' '
+    ) {
+      alert(`Todos los campos son obligatorios`);
+    }
   }
-
 }
