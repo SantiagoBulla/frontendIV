@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500&display=swap');
+*{
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+/*RIGHT SIDE*/
+.custom-column-right{
+    background: #127369;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.redirect-card{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.redirect-card h4{
+    font-weight:bolder;
+    font-size: 2.5rem;
+}
+
+.redirect-card button{
+    border: none;
+    background-color: inherit;
+    width: 40%;
+    height: 3rem;
+    border: 1px solid #BFBFBF;
+    color: #BFBFBF;
+    border-radius: 2rem;
+    font-size: large;
+    font-weight: bold;
+}
+.redirect-card-body P{
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+.redirect-card-body{
+    width: 60%;
+}
+
+/*LEFT SIDE*/
+.custom-column{
+    height: 100vh;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    width: 90%;
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-container h3{
+    font-weight:bolder;
+    font-size: 2.5rem;
+    color: #127369;
+    margin-top: 2rem;
+}
+
+.options-login{
+    width: 30%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-container p{
+    color: #BFBFBF;
+    font-size: 1rem;
+}
+
+.inputs-fields{
+    width: 40%;
+}
+
+.field{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.field svg{
+    fill: #0e6ae0;
+    width: 30px;
+    height: 30px;
+}
+
+
+.field input{
+    all: unset;
+    width: 100%;
+    margin: 5px 2px;
+    border: 1px solid #4C5958;
+    background: #e0dddd;
+    border-radius: .5rem;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.inputs-fields > input::placeholder{
+    text-align: left;
+    color: #10403B;
+}
+
+.form-container a{
+    color: #4C5958;
+}
+
+.form-container button{
+    all: unset;
+    width: 20%;
+    height: 2rem;
+    background-color: #127369;
+    margin-top: 1.5rem;
+    color: #ffffff;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.options-login svg{
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+}
