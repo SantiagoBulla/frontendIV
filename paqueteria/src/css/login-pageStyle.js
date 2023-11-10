@@ -1,94 +1,158 @@
 import { css } from "lit-element";
 
-export default css`
+export default css`        
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    html{
+        font-size: 16px;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container.cerrar{
+        display: none;
+    }
 
-        :host {
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 20px;
-                background: linear-gradient(#cececf, #73727c, #5144b4 );
-            }
-            .container-login{
-                width: 50%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                border-radius: 10rem;
-            }
-            .titulo{
-                background-color: #0d054b ;
-                color: #e9e7f7 ;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 10rem 10rem 0rem 0rem;
-            }
+    .container-login{
+        border: 1px solid #0d054b;
+        border-radius: 10px;
+        width: 65%;
+        display: flex;
+    }
 
-            .login-body{
-                background-color: #4a4956 ;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .login-footer{
-                background-color: #4a4956 ;
-                width: 100%;
-                display: flex;
-                justify-content: end;
-                align-items: center;
-                border-radius: 0rem 0rem 10rem 10rem;
-            }
+    .login-body{
+        width: 70%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        
+    }
 
-            .login-footer button{
-                margin-right: 2rem;
-                margin-bottom: 2rem;
-                border-radius: .5rem;
-                padding: .5rem;
-                border: none;
-                cursor: pointer;
-                color: #0d054b;
-            }
-            .login-footer button:hover{
-                background-color: #0d054b;
-                color: white;
-            }
-            .user{
-                width: auto;
-                height: 50%;
-                padding: 2rem 4rem;
-            }
-            .password{
-                width: auto;
-                height: 50%;
-                padding: 2rem 4rem;
-            }
+    .title{
+        text-align: center;
+        font-size: 1.2rem;
+    }
 
-            .user input, .password input{
-                all: unset;
-                width: 12rem;
-                border: none;
-                background-color: transparent;
-                border-bottom: 1px solid #0d054b;
-                /* border-left: 1px solid #0d054b; */
-                /* border-right: 1px solid #0d054b; */
-                border-radius: .3rem;
-                color: #e9e7f7;
-                font-size: 0.6em;
-                padding: 0rem .5rem;
-            }
-            
-            .user label, .password label{
-               color: #e9e7f7;
-            }
+    .google-log-in{
+        border: 0.3px solid lightgray;
+        border-radius: .5rem;
+        padding: 3px 10px;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
 
-            .user input::placeholder , .password input::placeholder{
-                color: #e9e7f7;
-                text-align: center;
-            }
+    .google-log-in .google-icon img{
+        width: 50%;
+        height: auto;
+    }
+    .google-log-in .google-text{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+    }
 
+    .separate-section{
+        font-size: .7rem;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        color: lightgray;
+        font-weight: bold;
+    }
+    .separate-section hr{
+        width: 20%; /* Hacer que el hr ocupe el ancho completo del contenedor */
+        border: none; /* Eliminar el borde predeterminado del hr */
+        border-top: 1px solid lightgray; /* Agregar un borde solo en la parte superior para simular una línea horizontal */
+        margin: 8px 5px;
+    }
+
+    .login-inputs{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .login-inputs label{
+        font-weight: bold;
+    }
+
+    .login-inputs input{
+        height: 1.5rem;
+        border: 1px solid rgb(165, 164, 164);
+        border-radius: 5px;
+        padding-left: .3rem;
+    }
+    .login-inputs input:focus{
+        height: 1.5rem;
+        outline: 1px solid rgb(139, 138, 138);
+        border-radius: 5px;
+    }
+
+    .log-in-options{
+        width: 60%;
+        font-size: .8rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .log-in-options .stay-conected{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .btn-login{
+        width: 60%;
+    }
+    .btn-login  button{
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+        border: none;
+        color: white;
+        background-color: #ECB14A;
+        border: 1px solid #f3ab2f;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-login  button:hover{        
+        background-color: #0d054b;
+        border: 1px solid #2a11e6;
+        color: white;
+    }
+
+    .register-link p{
+        color: lightgray;
+        font-weight: 300;
+    }
+
+    .login-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-image img{
+        width: 100%; /* Hacer que la imagen ocupe el 100% del ancho del contenedor */
+        height: auto;
+    }
 `
