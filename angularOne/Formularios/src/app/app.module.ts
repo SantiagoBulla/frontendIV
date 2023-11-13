@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule//es necesario para poder trabajar con el formGroup y todo lo de formularios dinamicos
   ],
   providers: [],
   bootstrap: [AppComponent]
