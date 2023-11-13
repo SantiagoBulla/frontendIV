@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router) {}
   // nombre: String = '';
   // saludo: String = '';
   username: String = '';
@@ -19,6 +21,10 @@ export class LoginComponent implements OnInit {
   //   this.saludo = `Hola ${this.nombre}`;
   // }
 
+  register() {
+    this.router.navigate(['']);
+  }
+
   login() {
     if (
       !this.username ||
@@ -26,7 +32,23 @@ export class LoginComponent implements OnInit {
       this.password == ' ' ||
       this.username == ' '
     ) {
-      alert(`Todos los campos son obligatorios`);
+      alert('todos los campos obligatorios');
+    } else {
+      var usuariosStr = localStorage.getItem('usuarios');
+      var usuariosRecuperados = usuariosStr ? JSON.parse(usuariosStr) : {};
+      var datos = usuariosRecuperados[this.username.toString()];
+      if (datos) {
+        if(datos.clave === this.password){
+          this.router.navigate(['/dashboard']);
+        }else{
+          alert('La contraseña no coincide con la registrada en el sistema');
+          this.password = '';
+        }
+      } else {
+        alert('El usuario no encuentra registrado');
+        this.username = '';
+        this.password = '';
+      }
     }
   }
 }
