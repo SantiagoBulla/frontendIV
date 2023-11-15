@@ -1,0 +1,61 @@
+<div class="conatiner">
+    <header>
+        <div class="logo">
+            <h1>CallCenter</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="menu-list"><a href="">Home</a></li>
+                <li class="menu-list"><a href="">About</a></li>
+                <li class="menu-list"><a href="">Portafolio</a></li>
+                <li class="menu-list"><a href="">Contact</a></li>
+                <li class="menu-list"><a href="">Sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-body">
+        <div class="form">
+            <form [formGroup]="registerForm" (submit)="register()">
+                <div class="title"><h4>JOIN THIS FAMILY!</h4></div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="">Name</label>
+                        <input type="text" formControlName="name" placeholder="Enter your name">
+                    </div>
+                    <div class="field">
+                        <label for="">Surnames</label>
+                        <input type="text" formControlName="surnames" placeholder="Enter your surnames">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div id="date">
+                        <div class="content">
+                            <label for="">Date of birth</label>
+                            <input type="date" formControlName="dateBirth"  placeholder="Enter your date of birth">
+                        </div>
+                        <div class="alert" *ngIf="registerForm.get('dateBirth')?.hasError('fechaInvalida')">
+                            La fecha de nacimiento no puede ser igual o superior a la actual.
+                        </div>
+                      </div>
+                    <div class="field">
+                        <label for="">Nickname</label>
+                        <input type="text" formControlName="nickName" placeholder="enter your nickname">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="">Email</label>
+                        <input type="email"  formControlName="email" placeholder="Enter your email">
+                    </div>
+                    <div class="field">
+                        <label for="">Password</label>
+                        <input type="password" formControlName="password" placeholder="Minimum 8-character password">
+                    </div>
+                </div>
+                <div [ngClass]="{ 'invalid-btn': registerForm.invalid, 'btnLogin': !registerForm.invalid }">
+                    <button [disabled]="registerForm.invalid">REGISTER</button>
+                </div>
+            </form>
+    </div>
+</div>
+<div>
