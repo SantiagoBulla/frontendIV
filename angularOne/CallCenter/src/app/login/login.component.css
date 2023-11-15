@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&family=Roboto:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1{
+    padding: 0 8rem;
+    font-size: 2.5rem;
+    color: #4b7bc6;
+}
+
+nav{
+    width: 50%;
+    height: 45%;
+    font-size: 1.2rem;
+}
+
+nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-list{
+    list-style: none;
+}
+
+.menu-list a{
+    text-decoration: none;
+    color: grey;
+    font-size: 1.2rem;
+    padding: 6px;
+}
+.menu-list a:hover{
+    text-decoration: none;
+    background-color: #4b7bc6;
+    color: #ecf2f8;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.container-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.img-login {
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.img-login img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    height: 80%;
+    border-radius: 2rem;
+    background-color: #9cc8f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+form{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+form .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #13305f;
+}
+.field {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+} 
+
+.field label{
+    color: #13305f;
+    font-size: large;
+    font-weight: bold;
+}
+
+.field input {
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #13305f;
+    font-size: medium;
+    color: #13305f;outline: none; /* Elimina el contorno predeterminado al enfocar */
+    transition: border-color 0.3s; /* Agregado para una transición suave del color del borde */
+    padding: 0 2px;
+}
+
+.field input:focus {
+    border-color: #13305f; /* Mantén el color del borde cuando el input está enfocado */
+    padding: 0 2px;
+}
+
+.field input::placeholder {
+    color: #ecf2f8;
+    font-size: medium;
+    padding: 0 2px;
+}
+
+.rememberOptions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberOptions p a{
+    color: inherit;
+    text-decoration: none;
+    color: #13305f;
+}
+
+.remember{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    color: #13305f;
+}
+
+#remember {
+    appearance: none; /* Anula los estilos predeterminados del sistema */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit (Chrome, Safari) */
+    -moz-appearance: none; /* Para navegadores basados en Gecko (Firefox) */
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+    /* Tamaño personalizado del checkbox */
+    width: 20px; /* Ajusta el ancho según tus preferencias */
+    height: 20px; /* Ajusta la altura según tus preferencias */   
+    border: 2px solid #13305f; /* Borde del checkbox */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: transparent; /* Fondo transparente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+}
+
+#remember:checked {
+    border-color: rgb(22, 167, 22) ;
+    background-color: rgb(22, 167, 22); /* Cambia el color del borde cuando está marcado */
+}
+
+
+.btnLogin{
+    height: 10%;
+}
+.btnLogin button{
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    font-size: x-large;
+    border-radius: 5px;
+    background-color:#4b7bc6; /* Color de fondo para el estado inválido */
+    color: #ecf2f8; /* Color de texto para el estado inválido */
+}
+.invalid-btn button{
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    font-size: x-large;
+    border-radius: 5px;
+    background-color: rgba(177, 175, 175, 0.808); /* Color de fondo para el estado inválido */
+    color: #ecf2f8  ; /* Color de texto para el estado inválido */
+}
+

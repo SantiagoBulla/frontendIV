@@ -1,0 +1,44 @@
+<div class="conatiner">
+    <header>
+        <div class="logo">
+            <h1>CallCenter</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="menu-list"><a href="">Home</a></li>
+                <li class="menu-list"><a href="">About</a></li>
+                <li class="menu-list"><a href="">Portafolio</a></li>
+                <li class="menu-list"><a href="">Contact</a></li>
+                <li class="menu-list"><a href="">Sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-body">
+        <div class="form">
+            <form [formGroup]="loginForm" (submit)="login()">
+                <div class="title"><h4>WELCOME</h4></div>
+                <div class="field">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" formControlName="email" placeholder="Enter your email address">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="pasword" formControlName="password" placeholder="Minimum 8 characters">
+                </div>
+                <div class="rememberOptions">
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="password">Remember</label>
+                    </div>
+                    <p><a href="#">Forgot your Password?</a></p>
+                </div>
+                <div [ngClass]="{ 'invalid-btn': loginForm.invalid, 'btnLogin': !loginForm.invalid }">
+                    <button [disabled]="loginForm.invalid">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+        <div class="img-login">
+            <img src="../../assets/img/login-image.avif" alt="login-image" >
+        </div>
+    </div>
+</div>
