@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,8 +12,7 @@ export class RegisterComponent implements OnInit{
   title = 'Register'
 
   public registerForm!: FormGroup; 
-
-  constructor(private formBuilder:FormBuilder){}
+  constructor(private router: Router, private formBuilder:FormBuilder){}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -40,8 +40,28 @@ export class RegisterComponent implements OnInit{
     return null;
   }
 
-  register(){
-    console.log(this.registerForm.value);
+  login(){
+    this.router.navigate(['/login']);
+  }
+
+  register() {
+    const emailControl = this.registerForm.get('email');
+  
+    // Verifica que el formulario y el campo de email estén disponibles y que el email tenga un valor
+    if (this.registerForm && emailControl && emailControl.value) {
+      // Recupera los usuarios desde el localstorage
+      const usuariosRecuperadosString = localStorage.getItem('usuarios');
+      const usuariosRecuperados = usuariosRecuperadosString ? JSON.parse(usuariosRecuperadosString) : {};
+  
+      // Agrega el nuevo usuario a los usuarios recuperados
+      usuariosRecuperados[emailControl.value] = this.registerForm.value;
+  
+      // Actualiza el localstorage con la info de los usuarios
+      localStorage.setItem("usuarios", JSON.stringify(usuariosRecuperados)); 
+      this.router.navigate(['']); 
+    } else {
+      console.error('Formulario o campo de email no disponibles o el email no tiene un valor.');
+    }
   }
 
 
