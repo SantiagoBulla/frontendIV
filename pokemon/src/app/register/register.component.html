@@ -1,0 +1,63 @@
+<div class="container">
+    <header>
+        <div class="menu-options">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+        </div>
+        <div class="logo">
+            <img src="../../assets/img/logo.png" alt="">
+        </div>
+        <div class="menu-options">
+            <a href="#">{{title}}</a>
+            <a href="https://community.pokemon.com/en-us/">community</a>
+        </div>
+    </header>
+    <div class="register-body">
+        <div class="form">
+            <form [formGroup]="registerForm" (submit)="register()">
+                <div class="title"><h4>WELCOME TO POKEMON</h4></div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="">Name</label>
+                        <input type="text" formControlName="name" placeholder="Enter your name">
+                    </div>
+                    <div class="field">
+                        <label for="">Surnames</label>
+                        <input type="text" formControlName="surnames" placeholder="Enter your surnames">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div id="date">
+                        <div class="content">
+                            <label for="">Date of birth</label>
+                            <input type="date" formControlName="dateBirth"  placeholder="Enter your date of birth">
+                        </div>
+                        <div class="alert" *ngIf="registerForm.get('dateBirth')?.hasError('fechaInvalida')">
+                            La fecha de nacimiento no puede ser igual o superior a la actual.
+                        </div>
+                      </div>
+                    <div class="field">
+                        <label for="">Nickname</label>
+                        <input type="text" formControlName="nickName" placeholder="enter your nickname">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="">Email</label>
+                        <input type="email"  formControlName="email" placeholder="Enter your email">
+                    </div>
+                    <div class="field">
+                        <label for="">Password</label>
+                        <input type="password" formControlName="password" placeholder="Minimum 8-character password">
+                    </div>
+                </div>
+                <div [ngClass]="{ 'invalid-btn': registerForm.invalid, 'btnRegister': !registerForm.invalid }">
+                    <button [disabled]="registerForm.invalid">REGISTER</button>
+                </div>
+            </form>
+            </div>
+        <div class="img-body">
+            <img src="../../assets/img/character.png" alt="">
+        </div>
+    </div>
+</div>
