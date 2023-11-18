@@ -1,0 +1,24 @@
+<div class="container">
+    <header>
+        <div class="menu-option">
+            <a href="#" (click)="cambiarFormulario('login')">Home</a>
+            <a href="#" (click)="cambiarFormulario('register')">About</a>
+        </div>
+        <div class="img-logo">
+            <img src="../../assets/img/logo.png" alt="">
+        </div>
+        <div class="menu-option">
+            <a href="#" (click)="cambiarFormulario('login')">Login</a>
+            <a href="#" (click)="cambiarFormulario('register')">Register</a>
+        </div>
+    </header>
+    <div class="content">
+        <div class="img-content">
+            <img src="../../assets/img/poke-image.png" alt="">
+        </div>
+        <div class="form">
+            <app-login-form *ngIf="mostrarLoginForm"></app-login-form>
+            <app-register-form *ngIf="!mostrarLoginForm"></app-register-form>
+        </div>
+    </div>
+</div>
