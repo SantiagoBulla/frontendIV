@@ -8,13 +8,17 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AsideMenuComponent } from './aside-menu/aside-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    DashboardComponent,
+    AsideMenuComponent
   ],
   imports: [
     BrowserModule,
