@@ -1,4 +1,65 @@
-.conatiner{
+.conatiner-main{
     width: 100vw;
     height: 100vh;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #DEFAE8;
+    display: flex;
+}
+
+aside{
+    width: 20%;
+    height: 100%;
+}
+
+.logo{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    background-color: #ba081e;
+    padding: 10px 0;
+}
+.logo img{
+    width: 200px;
+}
+
+.menu-options{
+    border-right: 1px solid #ba081e;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.menu-options a{
+    border: 1px solid white;
+    background-color: transparent;
+    width: 60%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 1px solid blue;
+    background-color: #38657e;
+    color: white;
+    border-radius: 5px;
+}
+
+.menu-options .logout{
+    border: 1px solid white;
+    background-color: #ba081e;
+    color: white;
+}
+
+.content{
+    width: 80%;
+    height: 100%;
 }

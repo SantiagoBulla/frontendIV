@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AsideMenuComponent } from './aside-menu/aside-menu.component';
+import { AllPokemonsComponent } from './all-pokemons/all-pokemons.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { AsideMenuComponent } from './aside-menu/aside-menu.component';
     LoginFormComponent,
     RegisterFormComponent,
     DashboardComponent,
-    AsideMenuComponent
+    AllPokemonsComponent
   ],
   imports: [
     BrowserModule,
