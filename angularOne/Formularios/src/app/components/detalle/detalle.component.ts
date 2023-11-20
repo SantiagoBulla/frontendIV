@@ -17,7 +17,8 @@ export class DetalleComponent implements OnChanges {
 
   ngOnChanges(): void {
     if (this.pokemon) {
-      this.pokemonService.getDescripcion(this.pokemon?.id).then((res) => {
+        this.pokemonService.getDescripcion(this.pokemon?.id).then((res) => {
+        console.log(this.pokemon);
         this.descripcion = res
       });
     }

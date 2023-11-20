@@ -6,55 +6,95 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  constructor(private pokemonService: PokemonService) {}
+  @ViewChild('tarjetas') tarjetasElement!: ElementRef; //para obtener una referencia a un elemento del DOM en Angular document.getElem...
 
-  constructor(private pokemonService: PokemonService){}
-  @ViewChild('tarjetas') tarjetasElement!:ElementRef;
+  listaPokemon: Resultado[] = [];
+  water: any[] = [];
+  fire: any[] = [];
+  grass: any[] = [];
+  electric: any[] = [];
+  other: any[] = [];
 
-  listaPokemon:Resultado[] = [];
-
-  pagina:number = 1;
-  cargando:boolean = false;
-  pokemonSeleccionado?:Pokemon;
-  detalle:boolean=false;
+  pagina: number = 1;
+  cargando: boolean = false;
+  pokemonSeleccionado?: Pokemon;
+  detalle: boolean = false;
 
   ngOnInit(): void {
     this.cargarLista();
-    this.pokemonService.getById("1");
+    this.pokemonService.getById('1');
+    const variable = this.pokemonService.getByPage(5, 100).then((response) => {
+      response.forEach((element) => {
+        this.pokemonService.getById(element.name).then((response) => {
+          response.types.forEach((item) => {
+            console.log(item.type.name);  
+            let categoria = item.type.name;
+            switch (categoria) {
+              case 'grass':
+                this.grass.push(element);
+                break;
+              case 'fire':
+                this.fire.push(element);
+                break;
+              case 'electric':
+                this.electric.push(element);
+                break;
+              case 'water':
+                this.water.push(element);
+                break;
+              default:
+                this.other.push(element);
+                break;
+            }
+          });
+        });
+      });
+    });
+    console.log(this.grass);
+    console.log(this.fire);
+    console.log(this.water);
+    console.log(this.electric);
+    console.log(this.other);
   }
 
-  async cargarLista(){
+  async cargarLista() {
     this.cargando = true;
 
-    this.listaPokemon = [...this.listaPokemon,  ...await this.pokemonService.getByPage(this.pagina)];
+    this.listaPokemon = [
+      ...this.listaPokemon,
+      ...(await this.pokemonService.getByPage(this.pagina)),
+    ];
     this.cargando = false;
     this.pagina++;
   }
 
-  onScroll(e:any){
-    if(this.cargando) return;
-    if(
+  onScroll(e: any) {
+    if (this.cargando) return;
+    if (
       Math.round(
-        this.tarjetasElement.nativeElement.clientHeight + this.tarjetasElement.nativeElement.scrollTop
-        )
-        === e.srcElement.scrollHeight){
-        this.cargarLista();
-      }
-
+        this.tarjetasElement.nativeElement.clientHeight +
+          this.tarjetasElement.nativeElement.scrollTop
+      ) === e.srcElement.scrollHeight
+    ) {
+      this.cargarLista();
+    }
   }
 
-  async tarjetaClickeada(id:string){
-    if(this.pokemonSeleccionado && id === this.pokemonSeleccionado?.id.toString()){
-      return this.cambiarEstadoDetalle()
+  async tarjetaClickeada(id: string) {
+    if (
+      this.pokemonSeleccionado &&
+      id === this.pokemonSeleccionado?.id.toString()
+    ) {
+      return this.cambiarEstadoDetalle();
     }
     this.pokemonSeleccionado = await this.pokemonService.getById(id);
   }
 
-
-  cambiarEstadoDetalle(){
-    if(this.pokemonSeleccionado) this.detalle = !this.detalle;
+  cambiarEstadoDetalle() {
+    if (this.pokemonSeleccionado) this.detalle = !this.detalle;
   }
-
 }

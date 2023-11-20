@@ -15,7 +15,7 @@ export class PokemonService {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${size}&offset=${offset}`)
     const resJson = await res.json();
     if(resJson.results.length > 0) return resJson.results
-    return [];
+    return [];    
   }
 
   async getById(id:string):Promise<Pokemon>{
