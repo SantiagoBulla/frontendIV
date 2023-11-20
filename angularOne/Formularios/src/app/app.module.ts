@@ -3,13 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TarjetaPokemonComponent } from './components/tarjeta-pokemon/tarjeta-pokemon.component';
+import { FotoPokemonComponent } from './components/foto-pokemon/foto-pokemon.component';
+import { DetalleComponent } from './components/detalle/detalle.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    TarjetaPokemonComponent,
+    FotoPokemonComponent,
+    DetalleComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
