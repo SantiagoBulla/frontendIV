@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Clase_01';
+  title = 'Pokedex';
 
   cambioText(){
     this.title = "Adios Clase_01";
