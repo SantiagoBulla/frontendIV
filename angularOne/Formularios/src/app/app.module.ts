@@ -8,6 +8,10 @@ import { TarjetaPokemonComponent } from './components/tarjeta-pokemon/tarjeta-po
 import { FotoPokemonComponent } from './components/foto-pokemon/foto-pokemon.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ElectricPokemonsComponent } from './pages/electric-pokemons/electric-pokemons.component';
+import { WaterPokemonsComponent } from './pages/water-pokemons/water-pokemons.component';
+import { FirePokemonsComponent } from './pages/fire-pokemons/fire-pokemons.component';
+import { GrassPokemonsComponent } from './pages/grass-pokemons/grass-pokemons.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { HomeComponent } from './pages/home/home.component';
     TarjetaPokemonComponent,
     FotoPokemonComponent,
     DetalleComponent,
-    HomeComponent
+    HomeComponent,
+    ElectricPokemonsComponent,
+    WaterPokemonsComponent,
+    FirePokemonsComponent,
+    GrassPokemonsComponent
   ],
   imports: [
     BrowserModule,
