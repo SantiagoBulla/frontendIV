@@ -4,18 +4,16 @@ import { Pokemon } from 'src/app/interfaces/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-electric-pokemons',
+  templateUrl: './electric-pokemons.component.html',
+  styleUrls: ['./electric-pokemons.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ElectricPokemonsComponent implements OnInit {
   constructor(private pokemonService: PokemonService) {}
   @ViewChild('tarjetas') tarjetasElement!: ElementRef; //para obtener una referencia a un elemento del DOM en Angular document.getElem...
+  
+  electricList: Resultado[] = [];
 
-  listaPokemon: Resultado[] = [];
-
-  pagina: number = 1;
-  cargando: boolean = false;
   pokemonSeleccionado?: Pokemon;
   detalle: boolean = false;
 
@@ -24,29 +22,24 @@ export class HomeComponent implements OnInit {
     this.pokemonService.getById('1');
   }
 
-  async cargarLista() {
-    this.cargando = true;
+  async cargarLista() {  
+    
+    const pokemones = await this.pokemonService.getByPage();
+    await Promise.all(
+      pokemones.map(async (pokemon) => {
+        const pokemonDetallado = await this.pokemonService.getById(pokemon.name);
+        const tipos = pokemonDetallado.types.map((tipo) => tipo.type.name);
+        if (tipos.includes('electric')) {
+          this.electricList.push(pokemon);
+        }
+      })
+    );
 
-    this.listaPokemon = [
-      ...this.listaPokemon,
-      ...(await this.pokemonService.getAllPokemons(this.pagina)),
+    this.electricList = [
+      ...this.electricList
     ];
-    this.cargando = false;
-    this.pagina++;
   }
-
-  onScroll(e: any) {
-    if (this.cargando) return;
-    if (
-      Math.round(
-        this.tarjetasElement.nativeElement.clientHeight +
-          this.tarjetasElement.nativeElement.scrollTop
-      ) === e.srcElement.scrollHeight
-    ) {
-      this.cargarLista();
-    }
-  }
-
+  
   async tarjetaClickeada(id: string) {
     if (
       this.pokemonSeleccionado &&
