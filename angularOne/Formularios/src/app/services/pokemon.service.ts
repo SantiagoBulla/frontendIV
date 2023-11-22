@@ -11,7 +11,7 @@ export class PokemonService {
 
   
   async getAllPokemons(page:number, size: number = 40):Promise<Resultado[]>{
-    if(page > 20) return [];
+    if(page > 25) return [];
     const offset = size*(page-1);
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${size}&offset=${offset}`)
     const resJson = await res.json();

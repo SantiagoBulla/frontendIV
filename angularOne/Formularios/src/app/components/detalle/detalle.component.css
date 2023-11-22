@@ -4,18 +4,16 @@
 }
 
 #datos {
-  height: 600px;
+  height: 500px;
   width: 90vw;
-  background-color: #fceab8;
+  background-color: #bfd678;
   display: grid;
   grid-template-rows: 1fr 3fr 3fr;
 }
 
 #datos .area:first-child {
   flex-grow: 1;
-  background-color: #bfc3ce;
-  background-image: linear-gradient(45deg, #c3c5c4 25%, transparent 25%, transparent 75%, #c3c5c4 75%, #c3c5c4),
-    linear-gradient(-45deg, #c3c5c4 25%, transparent 25%, transparent 75%, #c3c5c4 75%, #c3c5c4);
+  background-color: lightblue;
   background-size: 20px 20px;
 }
 
@@ -26,10 +24,7 @@
   height: 100%;
   padding-left: 60%;
   padding-right: 20px;
-  background-color: #d3ecf6;
-  background-image: linear-gradient(45deg, #c4e8f8 25%, transparent 25%, transparent 75%, #c4e8f8 75%, #c4e8f8),
-    linear-gradient(-45deg, #c4e8f8 25%, transparent 25%, transparent 75%, #c4e8f8 75%, #c4e8f8);
-  background-size: 20px 20px;
+  background-color: aliceblue;
   font-size: larger;
 }
 
@@ -38,47 +33,27 @@
 }
 
 #datos .area:last-child {
-  background: repeating-linear-gradient(
-    0deg,
-    #cce486,
-    #cce486 2px,
-    #bfd678 2px,
-    #bfd678 4px
-  );
-  p {
-    margin: 20px 10px;
-  }
+  background: lightblue;
 }
 
 #descripcionContainer {
-  background-color: #f8f7db;
-  display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  background-color: #ffffff;
   border-radius: 10px;
   height: 70%;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#descripcionContainer div {
-  background-color: #daeac4;
-  height: 90%;
-  margin: 5px;
-  margin-top: 10px;
+#descripcionContainer p {
+  width: 80%;
 }
 
-#descripcionContainer div:first-child {
-  border-radius: 0 8px 8px 0;
-}
 
-#descripcionContainer div:last-child {
-  border-radius: 8px 0 0 8px;
-}
 
 .etiqueta {
   display: inline-block;
-  background-color: #67bcea;
+  background-color: #da4443;
   border-radius: 5px;
   color: #ffffff; /* Reemplaza con el valor correcto de $texto-blanco */
   padding: 5px 20px;
@@ -89,17 +64,18 @@
 }
 
 .tipo {
-  background-color: rgb(89, 89, 89);
+  background-color: grey;
   border-radius: 5px;
   color: #ffffff; /* Reemplaza con el valor correcto de $texto-blanco */
-  padding: 5px 20px;
+  padding: 5px 15px;
   margin-left: 5px;
+  font-size: x-large;
 }
 
 button {
-  background-color: #fceab8;
+  background-color: #da4443;
   border-radius: 0 25px 25px 0;
-  border: unset;
+  border: none;
   cursor: pointer;
 }
 
