@@ -12,6 +12,9 @@ import { ElectricPokemonsComponent } from './pages/electric-pokemons/electric-po
 import { WaterPokemonsComponent } from './pages/water-pokemons/water-pokemons.component';
 import { FirePokemonsComponent } from './pages/fire-pokemons/fire-pokemons.component';
 import { GrassPokemonsComponent } from './pages/grass-pokemons/grass-pokemons.component';
+import { IndexComponent } from './pages/index/index.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { GrassPokemonsComponent } from './pages/grass-pokemons/grass-pokemons.co
     ElectricPokemonsComponent,
     WaterPokemonsComponent,
     FirePokemonsComponent,
-    GrassPokemonsComponent
+    GrassPokemonsComponent,
+    IndexComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
