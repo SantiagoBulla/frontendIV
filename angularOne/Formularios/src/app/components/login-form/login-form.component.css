@@ -13,13 +13,13 @@ form{
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    border: 1px solid darkgreen;
+    border: 1px solid #1c4760;
     border-radius: 5px;
 }
 
 form h3{
     font-size: 2.5rem;
-    color: #38657e;
+    color: #1c4760;
     margin-top: 25px;
 }
 
@@ -34,12 +34,12 @@ form h3{
 }
 
 .input-field  label{
-    color: #38657e;
+    color: #da4443;
 }
 
 .input-field input{
     border: none;
-    border: 1px solid green;
+    border: 1px solid #1c4760;
     width: 90%;
     height: 40%;
     display: flex;
@@ -61,11 +61,11 @@ form h3{
     width: 90%;
     height: 50%;
     border: none;
-    border: 1px solid blue;
+    border: 1px solid #1E90FF;
     border-radius: 5px;
     font-size: 1.5rem;
     padding: 5px;
-    background-color: #38657e;
+    background-color: #1c4760;
     color: white;
     cursor: pointer;
 }

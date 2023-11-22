@@ -1,7 +1,8 @@
 .container{
     width: 100vw;
     height: 100vh;
-    background-color: #DEFAE8;
+    background: white;
+    font-family: monospace;
 }
 
 header{
@@ -31,11 +32,11 @@ header{
 .menu-option a{
     text-decoration: none;
     font-size: 1.8rem;
-    color: green;
+    color: #1c4760;
     padding: 5px;
 }
 .menu-option a:hover{
-    background-color: #586fa0;
+    background-color: #da4443;
     color: white;
     padding: 5px;
     border-radius: 5px;
