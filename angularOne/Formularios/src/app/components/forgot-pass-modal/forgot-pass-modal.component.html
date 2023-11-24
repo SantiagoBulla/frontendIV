@@ -1,0 +1,21 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+        <form>
+            <div class="close-modal">
+                <button (click)="closeModal()">Close</button>
+            </div>
+            <h2>Recover your password</h2>
+            <div class="input-field">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter your username" id="username">
+            </div>
+            <div class="input-field">
+                <label for="password">New password</label>
+                <input type="password" placeholder="Enter your new password" id="password">
+            </div>
+            <div class="recover" id="button">
+                <button>RESET PASSWORD</button>
+            </div>
+        </form>
+    </div>
+  </div>

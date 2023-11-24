@@ -12,9 +12,9 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     border: 1px solid #1c4760;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 form h3{
@@ -25,10 +25,10 @@ form h3{
 
 .input-field{
     width: 100%;
-    height: 30%;
+    height: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 5px;
     padding-left: 3rem;
 }
@@ -41,7 +41,7 @@ form h3{
     border: none;
     border: 1px solid #1c4760;
     width: 90%;
-    height: 40%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,6 +55,24 @@ form h3{
 }
 .input-field input:focus{
     outline: none;
+}
+.forgot-password{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.forgot-password hr{
+    width: 25%;
+    height: 0px;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #da4443;
 }
 
 .input-field button{

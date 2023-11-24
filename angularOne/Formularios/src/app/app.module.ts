@@ -15,6 +15,9 @@ import { GrassPokemonsComponent } from './pages/grass-pokemons/grass-pokemons.co
 import { IndexComponent } from './pages/index/index.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPassModalComponent } from './components/forgot-pass-modal/forgot-pass-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,15 @@ import { RegisterFormComponent } from './components/register-form/register-form.
     GrassPokemonsComponent,
     IndexComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ForgotPassModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule//es necesario para poder trabajar con el formGroup y todo lo de formularios dinamicos
+    ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule//es necesario para poder trabajar con el formGroup y todo lo de formularios dinamicos
   ],
   providers: [],
   bootstrap: [AppComponent]
