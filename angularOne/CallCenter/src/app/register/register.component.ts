@@ -57,7 +57,7 @@ export class RegisterComponent implements OnInit{
       usuariosRecuperados[emailControl.value] = this.registerForm.value;
   
       // Actualiza el localstorage con la info de los usuarios
-      localStorage.setItem("usuarios", JSON.stringify(usuariosRecuperados)); 
+      localStorage.setItem("usuarios", JSON.stringify(usuariosRecuperados));
       this.router.navigate(['']); 
     } else {
       console.error('Formulario o campo de email no disponibles o el email no tiene un valor.');
