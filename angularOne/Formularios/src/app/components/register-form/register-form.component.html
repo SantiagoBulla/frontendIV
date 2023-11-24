@@ -1,18 +1,24 @@
 <div class="container">
-    <form>
+    <form [formGroup]="registerForm" (submit)="register()">
         <h3>Join the comunity!</h3>
         <div class="input-field">
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username">
+            <input type="text" id="username" formControlName="username" placeholder="Enter your username">
+            <div *ngIf="registerForm.get('username')?.hasError('required')" class="error-message">
+                Username is required
+            </div>
         </div>
         <div class="input-field" id="age">
-            <label for="age">Age</label>
-            <input type="date" placeholder="Enter your date of birth">
+            <label for="age">Date of birth</label>
+            <input type="date" formControlName="dateOfBirth" placeholder="Enter your date of birth">
+            <div *ngIf="registerForm.get('dateOfBirth')?.hasError('required')" class="error-message">
+                Date of birth is required
+            </div>
         </div>
         <div class="input-field">
             <label for="category">Category:</label>
             <section>
-                    <select>
+                    <select formControlName="category">
                         <option value="" disabled selected>Select your rol</option>
                         <option value="hola">Entrenadores Pokémon</option>
                         <option value="hola">Maestros Pokémon</option>
@@ -23,14 +29,23 @@
                         <option value="hola">Investigadores Pokémon</option>
                         <option value="hola">Especialistas Pokémon</option>
                     </select>
+                    <div *ngIf="registerForm.get('category')?.hasError('required')" class="error-message">
+                        Category is required
+                    </div>
             </section>
         </div>
         <div class="input-field">
             <label for="password">Password</label>
-            <input type="text" id="password" placeholder="Enter your password">
+            <input type="text" id="password"  formControlName="password" placeholder="Enter your password">
+            <div *ngIf="registerForm.get('password')?.hasError('required')" class="error-message">
+                Password is required
+            </div>
+            <div *ngIf="registerForm.get('password')?.hasError('minlength')" class="error-message">
+                Password must be at least 8 characters long
+            </div>
         </div>
-        <div class="input-field" id="button">
-            <button>REGISTER</button>
+        <div  [ngClass]="{ 'invalid-btn': registerForm.invalid, 'btnLogin': !registerForm.invalid }">
+            <button [disabled]="registerForm.invalid">REGISTER</button>
         </div>
         
     </form>
