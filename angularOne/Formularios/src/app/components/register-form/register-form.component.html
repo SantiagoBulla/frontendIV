@@ -20,14 +20,14 @@
             <section>
                     <select formControlName="category">
                         <option value="" disabled selected>Select your rol</option>
-                        <option value="hola">Entrenadores Pokémon</option>
-                        <option value="hola">Maestros Pokémon</option>
-                        <option value="hola">Líderes de Gimnasio</option>
-                        <option value="hola">Alto Mando</option>
-                        <option value="hola">Campeón de la Liga Pokémon</option>
-                        <option value="hola">Coordinadores Pokémon</option>
-                        <option value="hola">Investigadores Pokémon</option>
-                        <option value="hola">Especialistas Pokémon</option>
+                        <option value="Entrenador-Pokemon">Entrenador Pokémon</option>
+                        <option value="Maestro-Pokemon">Maestro Pokémon</option>
+                        <option value="Lider-de-Gimnasio">Líder de Gimnasio</option>
+                        <option value="Alto-Mando">Alto Mando</option>
+                        <option value="Campeon-Liga-Pokemon">Campeón de la Liga Pokémon</option>
+                        <option value="Coordinador-Pokemon">Coordinador Pokémon</option>
+                        <option value="Investigador-Pokemon">Investigador Pokémon</option>
+                        <option value="Especialista-Pokemon">Especialista Pokémon</option>
                     </select>
                     <div *ngIf="registerForm.get('category')?.hasError('required')" class="error-message">
                         Category is required
@@ -36,7 +36,7 @@
         </div>
         <div class="input-field">
             <label for="password">Password</label>
-            <input type="text" id="password"  formControlName="password" placeholder="Enter your password">
+            <input type="password" id="password"  formControlName="password" placeholder="Enter your password">
             <div *ngIf="registerForm.get('password')?.hasError('required')" class="error-message">
                 Password is required
             </div>

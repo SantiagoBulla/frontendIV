@@ -1,6 +1,6 @@
 <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-container" (click)="$event.stopPropagation()">
-        <form [formGroup]="forgotPasswordForm" (click)="resetPassword">
+        <form [formGroup]="forgotPasswordForm" (click)="resetPassword()">
             <div class="close-modal">
                 <button (click)="closeModal()">Close</button>
             </div>
