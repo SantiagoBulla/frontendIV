@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* gap: 10px; */
+    font-family: monospace;
   }
 
 
@@ -28,7 +28,6 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     gap: 1.5rem;
   }
   
@@ -45,7 +44,7 @@ form{
     all: unset;
     height: 60%;
     width: 10%;
-    border: 1px solid red;
+    border: 1px solid darkred;
     background-color: transparent;
     border-radius: 5px;
     padding: 2px;
@@ -55,7 +54,7 @@ form{
   }
   .close-modal button:hover{
     background-color: #da4443;  
-    border: 1px solid #c02f2f;
+    border: 1px solid darkred;
     color: white;
   }
 
@@ -76,7 +75,7 @@ form{
 }
 
 .input-field  label{
-    color: #da4443;
+    color: darkred;
 }
 
 .input-field input{
@@ -99,26 +98,49 @@ form{
     outline: none;
 }
 
-.recover{
+.btnResetPassword{
   width: 80%;
   height: 8%;
   display: flex;
   justify-content: center;
 }
-.recover button{
-    width: 70%;
-    border: none;
-    border: 1px solid rgba(144, 238, 144, 0.815);
-    border-radius: 5px;
-    background: transparent;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: green;
-    cursor: pointer;
-} 
-
-.recover button:hover{
+.btnResetPassword button{
+  width: 70%;
+  border: none;
+  border: 1px solid rgba(144, 238, 144, 0.815);
+  border-radius: 5px;
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: green;
+  cursor: pointer;
+}
+.btnResetPassword button:hover{
   background: green;
   color: white;
+}
 
+.invalid-btn{
+  width: 80%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+}
+.invalid-btn button{
+  width: 70%;
+  border: none;
+  border: 1px solid grey;
+  background-color: darkgrey;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(78, 75, 75);
+}
+
+.error-message{
+  width: 90%;
+  font-size: .8rem;
+  display: flex;
+  justify-content: flex-end;
+  color: #da4443;
 }

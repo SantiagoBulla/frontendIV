@@ -1,20 +1,29 @@
 <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-container" (click)="$event.stopPropagation()">
-        <form>
+        <form [formGroup]="forgotPasswordForm" (click)="resetPassword">
             <div class="close-modal">
                 <button (click)="closeModal()">Close</button>
             </div>
             <h2>Recover your password</h2>
             <div class="input-field">
                 <label for="username">Username</label>
-                <input type="text" placeholder="Enter your username" id="username">
+                <input type="text"  formControlName="username" placeholder="Enter your username" id="username">
+                <div *ngIf="forgotPasswordForm.get('username')?.hasError('required')" class="error-message">
+                    Username is required
+                </div>
             </div>
             <div class="input-field">
                 <label for="password">New password</label>
-                <input type="password" placeholder="Enter your new password" id="password">
+                <input type="password" formControlName="password" placeholder="Enter your new password" id="password">
+                <div *ngIf="forgotPasswordForm.get('password')?.hasError('required')" class="error-message">
+                    Password is required
+                </div>
+                <div *ngIf="forgotPasswordForm.get('password')?.hasError('minlength')" class="error-message">
+                    Password must be at least 8 characters long
+                </div>
             </div>
-            <div class="recover" id="button">
-                <button>RESET PASSWORD</button>
+            <div [ngClass]="{ 'invalid-btn': forgotPasswordForm.invalid, 'btnResetPassword': !forgotPasswordForm.invalid }">
+                <button [disabled]="forgotPasswordForm.invalid" >RESET PASSWORD</button>
             </div>
         </form>
     </div>
